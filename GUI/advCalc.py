@@ -153,7 +153,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         result = eval(expression)
         self.lineEdit.setText(str(result))
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
