@@ -327,6 +327,61 @@ font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
        <string>Employee Dashboard</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>1091</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>New Row</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Emp_Id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Emp_Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Emp_Department</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Emp_City</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>admin</string>
+       </property>
+      </item>
+      <item row="0" column="2">
+       <property name="text">
+        <string>admin</string>
+       </property>
+      </item>
+      <item row="0" column="3">
+       <property name="text">
+        <string>Pune</string>
+       </property>
+      </item>
+     </widget>
     </widget>
    </widget>
   </widget>

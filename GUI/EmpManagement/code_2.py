@@ -1,14 +1,14 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'design.ui'
+#
+# Created by: PyQt5 UI code generator 5.9
+#
+# WARNING! All changes made in this file will be lost!
+
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
-import pymysql
 
-connection = pymysql.connect(host='localhost',user='root',
-                             database='emp_db',port=3306,
-                             autocommit = True
-                             )
-cursor = connection.cursor()
-
-class Ui_MainWindow(QtWidgets.QMainWindow):
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1260, 796)
@@ -32,7 +32,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 "font: 18pt \"MS Shell Dlg 2\";")
         self.label_3.setObjectName("label_3")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setGeometry(QtCore.QRect(660, 360, 471, 71))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -82,32 +81,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.lineEdit_5 = QtWidgets.QLineEdit(self.frame)
         self.lineEdit_5.setGeometry(QtCore.QRect(570, 350, 321, 61))
         self.lineEdit_5.setObjectName("lineEdit_5")
-
-        self.comboBox = QtWidgets.QComboBox(self.frame)
-        self.comboBox.setGeometry(QtCore.QRect(570, 430, 321, 61))
-        self.comboBox.setStyleSheet("font: 22pt \"MS Shell Dlg 2\";")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox_2 = QtWidgets.QComboBox(self.frame)
-        self.comboBox_2.setGeometry(QtCore.QRect(570, 510, 321, 61))
-        self.comboBox_2.setStyleSheet("font: 22pt \"MS Shell Dlg 2\";")
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-
-        # self.lineEdit_6 = QtWidgets.QLineEdit(self.frame)
-        # self.lineEdit_6.setGeometry(QtCore.QRect(570, 430, 321, 61))
-        # self.lineEdit_6.setObjectName("lineEdit_6")
-        # self.lineEdit_7 = QtWidgets.QLineEdit(self.frame)
-        # self.lineEdit_7.setGeometry(QtCore.QRect(570, 510, 321, 61))
-        # self.lineEdit_7.setObjectName("lineEdit_7")
-
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_6.setGeometry(QtCore.QRect(570, 430, 321, 61))
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.lineEdit_7 = QtWidgets.QLineEdit(self.frame)
+        self.lineEdit_7.setGeometry(QtCore.QRect(570, 510, 321, 61))
+        self.lineEdit_7.setObjectName("lineEdit_7")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
         self.pushButton_3.setGeometry(QtCore.QRect(410, 640, 381, 61))
         self.pushButton_3.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";")
@@ -125,9 +104,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tableWidget.setGeometry(QtCore.QRect(80, 170, 1091, 491))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(4)
-        # self.tableWidget.setRowCount(1)
-        # item = QtWidgets.QTableWidgetItem()
-        # self.tableWidget.setVerticalHeaderItem(0, item)
+        self.tableWidget.setRowCount(1)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -136,7 +115,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tableWidget.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, item)
-
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 3, item)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1260, 31))
@@ -186,6 +172,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_9.setText(_translate("MainWindow", "Enter Emp City"))
         self.pushButton_3.setText(_translate("MainWindow", "Register"))
         self.label_10.setText(_translate("MainWindow", "Employee Dashboard"))
+        item = self.tableWidget.verticalHeaderItem(0)
+        item.setText(_translate("MainWindow", "New Row"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Emp_Id"))
         item = self.tableWidget.horizontalHeaderItem(1)
@@ -194,19 +182,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         item.setText(_translate("MainWindow", "Emp_Department"))
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Emp_City"))
-
-        # __sortingEnabled = self.tableWidget.isSortingEnabled()
-        # self.tableWidget.setSortingEnabled(False)
-        # item = self.tableWidget.item(0, 0)
-        # item.setText(_translate("MainWindow", "0"))
-        # item = self.tableWidget.item(0, 1)
-        # item.setText(_translate("MainWindow", "admin"))
-        # item = self.tableWidget.item(0, 2)
-        # item.setText(_translate("MainWindow", "admin"))
-        # item = self.tableWidget.item(0, 3)
-        # item.setText(_translate("MainWindow", "Pune"))
-        # self.tableWidget.setSortingEnabled(__sortingEnabled)
-
+        __sortingEnabled = self.tableWidget.isSortingEnabled()
+        self.tableWidget.setSortingEnabled(False)
+        item = self.tableWidget.item(0, 0)
+        item.setText(_translate("MainWindow", "0"))
+        item = self.tableWidget.item(0, 1)
+        item.setText(_translate("MainWindow", "admin"))
+        item = self.tableWidget.item(0, 2)
+        item.setText(_translate("MainWindow", "admin"))
+        item = self.tableWidget.item(0, 3)
+        item.setText(_translate("MainWindow", "Pune"))
+        self.tableWidget.setSortingEnabled(__sortingEnabled)
         self.menuOptions.setTitle(_translate("MainWindow", "Options"))
         self.menuEmpSearch.setTitle(_translate("MainWindow", "EmpSearch"))
         self.menuDeleteEmp.setTitle(_translate("MainWindow", "DeleteEmp"))
@@ -215,78 +201,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionRegister.setText(_translate("MainWindow", "Register"))
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
 
-        self.comboBox.setItemText(0, _translate("MainWindow", "IT"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "HR"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "BPO"))
-        self.comboBox.setItemText(3, _translate("MainWindow", "Tech Support"))
-        self.comboBox_2.setItemText(0, _translate("MainWindow", "Delhi"))
-        self.comboBox_2.setItemText(1, _translate("MainWindow", "Pune"))
-        self.comboBox_2.setItemText(2, _translate("MainWindow", "Chennai"))
-        self.comboBox_2.setItemText(3, _translate("MainWindow", "Mumbai"))
-        self.comboBox_2.setItemText(4, _translate("MainWindow", "Noida"))
-
-        self.frame.hide()
-
-        self.actionLogin.triggered.connect(self.showHome)
-        self.pushButton.clicked.connect(self.login)
-        self.pushButton_2.clicked.connect(self.showRegister)
-        self.pushButton_3.clicked.connect(self.registerUser)
-
-    def showHome(self):
-        self.frame.hide()
-
-    def showRegister(self):
-        self.frame.show()
-        self.frame_2.hide()
-
-    def registerUser(self):
-        emp_id = self.lineEdit_3.text()
-        emp_name = self.lineEdit_4.text()
-        emp_pwd = self.lineEdit_5.text()
-        emp_dept = self.comboBox.currentText()
-        emp_city = self.comboBox_2.currentText()
-        query = "INSERT INTO employees VALUES (%s, %s, %s, %s, %s)"
-        cursor.execute(query, (emp_id, emp_name, emp_pwd, emp_dept, emp_city))
-
-        QMessageBox.about(self, "Success", "Data Inserted Successfully...")
-
-        self.lineEdit_3.setText("")
-        self.lineEdit_4.setText("")
-        self.lineEdit_5.setText("")
-
-    def login(self):
-        emp_id = self.lineEdit.text()
-        emp_pwd = self.lineEdit_2.text()
-        query = "SELECT * FROM employees WHERE emp_id = %s AND emp_pwd = %s"
-        cursor.execute(query, (emp_id, emp_pwd))
-        data = cursor.fetchall()
-        # print(data)
-        if len(data) > 0:
-            self.showDashboard()
-        else:
-            QMessageBox.about(self, "Success", "User Don't Exist...")
-    def showDashboard(self):
-        self.frame.show()
-        self.frame_2.show()
-
-        query = "SELECT emp_id, emp_name, emp_dept, emp_city FROM employees"
-        cursor.execute(query)
-        data = cursor.fetchall()
-        row_count = cursor.rowcount
-        print(row_count)
-        self.tableWidget.setRowCount(row_count)
-        # for row in range(row_count):
-        #     for col in range(len(data[0])):
-        #         print(row, col)
-        try:
-            for row in range(row_count):
-                for col in range(len(data[0])):
-                    item = QtWidgets.QTableWidgetItem()
-                    self.tableWidget.setItem(row, col, item)
-                    item = self.tableWidget.item(row, col)
-                    item.setText(str(data[row][col]))
-        except BaseException as ex:
-            print(ex)
 
 if __name__ == "__main__":
     import sys
